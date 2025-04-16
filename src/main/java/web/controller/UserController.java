@@ -38,8 +38,7 @@ public class UserController {
         userService.addUser(user);
         return "redirect:/";
     }
-
-    @GetMapping("/deleteUser")
+    @PostMapping("/deleteuser")
     public String deleteUser(@RequestParam("id") long id) {
         userService.deleteUser(id);
         return "redirect:/";

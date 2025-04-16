@@ -15,7 +15,7 @@ public class UserDaoImpl implements UserDao {
     private EntityManager entityManager;
 
     @Override
-    @Transactional // Add Transactional annotation
+    @Transactional
     public void addUser(User user) {
         entityManager.persist(user);
     }
@@ -31,16 +31,16 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    @Transactional // Add Transactional annotation
+    @Transactional
     public void deleteUser(long id) {
-        User user = getUser(id); // Get the user first
-        if (user != null) {      // Check if the user exists
+        User user = getUser(id);
+        if (user != null) {
             entityManager.remove(user);
         }
     }
 
     @Override
-    @Transactional // Add Transactional annotation
+    @Transactional
     public void updateUser(User user) {
         entityManager.merge(user);
     }
